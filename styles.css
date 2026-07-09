@@ -172,6 +172,7 @@ a {
 
 .btn {
   padding: 16px 28px;
+  margin-top: 32px;
   transition: .25s;
 }
 
