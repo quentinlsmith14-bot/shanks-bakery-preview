@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shanks Bakery & Boba — Downtown Chillicothe's sweet spot. Handcrafted pastries, custom cakes, and boba made with love.">
+  <title>Shanks Bakery & Boba</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0; padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --cream:   #F9F2EA;
+      --pink:    #F0D8D0;
+      --rose:    #D4748A;
+      --dark:    #3A241D;
+      --btn-red: #C4584A;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      font-family: 'Poppins', sans-serif;
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+
+    /* ─────────── HEADER ─────────── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 48px;
+      background: transparent;
+    }
+
+    .logo { width: 130px; }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    nav a {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-decoration: none;
+      color: var(--dark);
+      cursor: pointer;
+    }
+
+    nav a.nav-cta {
+      background: var(--rose);
+      color: white;
+      padding: 9px 20px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ─────────── HERO ─────────── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* SVG clip blob */
+    .hero-blob {
+      position: absolute;
+      top: 0; right: 0;
+      width: 62%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    .hero-blob img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .hero-blob svg.clip-svg {
+      position: absolute;
+      width: 0; height: 0;
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 1;
+      padding: 0 0 0 7%;
+      max-width: 500px;
+    }
+
+    .hero-text h1 {
+      font-size: clamp(36px, 4.5vw, 60px);
+      font-weight: 800;
+      line-height: 1.05;
+    }
+
+    .script {
+      font-family: 'Dancing Script', cursive;
+      color: var(--rose);
+      font-size: clamp(38px, 5vw, 64px);
+      font-weight: 700;
+      display: block;
+      line-height: 1.25;
+    }
+
+    .hero-text p {
+      margin-top: 18px;
+      font-size: clamp(13px, 1.2vw, 15px);
+      line-height: 1.9;
+      max-width: 320px;
+    }
+
+    .btns {
+      margin-top: 28px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn-filled {
+      background: var(--btn-red);
+      color: white;
+      padding: 12px 26px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 13px;
+      text-decoration: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: none;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--dark);
+      padding: 12px 26px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 13px;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1.5px solid var(--dark);
+      display: inline-flex;
+      align-items: center;
+    }
+
+    /* ─────────── WAVE DIVIDER ─────────── */
+    .wave {
+      display: block;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+
+    .wave svg { display: block; width: 100%; }
+
+    /* ─────────── COMMUNITY ─────────── */
+    .community {
+      background: var(--pink);
+      padding: 72px 7%;
+      display: flex;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .community-text { flex: 0 0 380px; }
+
+    .community-text h2 {
+      font-size: clamp(24px, 3vw, 38px);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .community-text h2 em {
+      font-style: normal;
+      color: var(--rose);
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.15em;
+    }
+
+    .community-text p {
+      font-size: 14px;
+      line-height: 1.9;
+      max-width: 300px;
+      margin-bottom: 28px;
+    }
+
+    .community-photos {
+      flex: 1;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .photo-circle {
+      width: clamp(160px, 18vw, 240px);
+      height: clamp(160px, 18vw, 240px);
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .photo-circle img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+
+    .photo-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .photo-card {
+      width: clamp(140px, 16vw, 210px);
+      height: clamp(105px, 12vw, 158px);
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    .photo-card:nth-child(1) { transform: rotate(2deg); }
+    .photo-card:nth-child(2) { transform: rotate(-1.5deg); }
+
+    .photo-card img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+
+    /* ─────────── MADE FRESH ─────────── */
+    .made-fresh {
+      background: var(--cream);
+      padding: 80px 6% 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .made-fresh-inner {
+      display: flex;
+      align-items: flex-start;
+      gap: 0;
+    }
+
+    .drink-col {
+      flex: 0 0 240px;
+      position: relative;
+      align-self: flex-end;
+      margin-bottom: -80px;
+      margin-left: -20px;
+    }
+
+    .drink-col img {
+      width: 100%;
+      display: block;
+    }
+
+    .fresh-content {
+      flex: 1;
+      padding-left: 40px;
+    }
+
+    .fresh-content h2 {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(28px, 3.5vw, 48px);
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 52px;
+    }
+
+    .menu-grid {
+      display: flex;
+      gap: 0;
+    }
+
+    .menu-item {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px 0;
+      border-right: 1px solid #D4748A55;
+    }
+
+    .menu-item:last-child { border-right: none; }
+
+    .menu-icon {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .menu-item h3 {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .menu-item p {
+      font-size: 12px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      flex: 1;
+    }
+
+    .learn-more {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      color: var(--dark);
+      text-decoration: none;
+      border-bottom: 1.5px solid var(--rose);
+      padding-bottom: 2px;
+    }
+
+    .learn-more::after { content: ' →'; }
+
+    /* ─────────── REVIEWS + CTA ─────────── */
+    .bottom-section {
+      background: var(--pink);
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: center;
+      padding: 80px 5%;
+      gap: 40px;
+      position: relative;
+    }
+
+    .reviews h3 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .reviews blockquote {
+      font-size: 13px;
+      line-height: 1.8;
+      font-style: italic;
+      margin-bottom: 10px;
+      max-width: 280px;
+    }
+
+    .reviews cite {
+      font-size: 12px;
+      font-weight: 600;
+      font-style: normal;
+    }
+
+    .review-dots {
+      display: flex;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .review-dots span {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--rose);
+      opacity: 0.4;
+    }
+
+    .review-dots span.active { opacity: 1; }
+
+    .bottom-photos {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    .bottom-photos .bp {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    .bottom-photos .bp:first-child {
+      width: 160px;
+      height: 200px;
+      transform: rotate(-2deg);
+    }
+
+    .bottom-photos .bp:last-child {
+      width: 180px;
+      height: 220px;
+      transform: rotate(1.5deg);
+    }
+
+    .bottom-photos .bp img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+
+    .cta-box { text-align: right; }
+
+    .cta-box h3 {
+      font-size: clamp(22px, 2.5vw, 32px);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .cta-box p {
+      font-size: 13px;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .btn-dark {
+      background: var(--dark);
+      color: white;
+      padding: 14px 30px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 13px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      border: none;
+    }
+
+    /* ─────────── FOOTER ─────────── */
+    footer {
+      background: var(--cream);
+      padding: 52px 7%;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+      border-top: 1px solid #e0d0c8;
+    }
+
+    .footer-logo { width: 120px; margin-bottom: 8px; }
+
+    footer h4 {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    footer p, footer a {
+      font-size: 13px;
+      line-height: 2;
+      color: var(--dark);
+      text-decoration: none;
+      display: block;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .social-links a {
+      font-size: 22px;
+      display: inline;
+    }
+
+    /* ─────────── MOBILE ─────────── */
+    @media (max-width: 900px) {
+      header { padding: 12px 20px; }
+      .logo { width: 100px; }
+      nav { gap: 12px; }
+      nav a { font-size: 9px; }
+      nav a.nav-cta { padding: 7px 12px; }
+
+      /* hide middle nav items on very small screens */
+      @media (max-width: 600px) {
+        nav a:not(.nav-cta) { display: none; }
+      }
+
+      .hero {
+        min-height: 100svh;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        padding-bottom: 48px;
+      }
+
+      .hero-blob {
+        width: 100%;
+        height: 52%;
+        top: 0;
+      }
+
+      .hero-text {
+        padding: 0 20px;
+        max-width: 100%;
+      }
+
+      .hero-text p { max-width: 100%; }
+
+      .community {
+        flex-direction: column;
+        gap: 36px;
+        padding: 60px 6%;
+      }
+
+      .community-text { flex: none; width: 100%; }
+
+      .community-photos { justify-content: flex-start; }
+
+      .made-fresh-inner { flex-direction: column; }
+
+      .drink-col {
+        flex: none;
+        width: 180px;
+        margin: 0 auto -40px;
+      }
+
+      .fresh-content { padding-left: 0; }
+
+      .menu-grid {
+        flex-direction: column;
+        gap: 36px;
+      }
+
+      .menu-item {
+        border-right: none;
+        border-bottom: 1px solid #D4748A44;
+        padding-bottom: 36px;
+      }
+
+      .menu-item:last-child { border-bottom: none; }
+
+      .bottom-section {
+        grid-template-columns: 1fr;
+        padding: 60px 6%;
+      }
+
+      .cta-box { text-align: left; }
+
+      .bottom-photos { justify-content: flex-start; }
+
+      footer {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      footer { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- clip path definition -->
+<svg width="0" height="0" style="position:absolute;overflow:hidden">
+  <defs>
+    <clipPath id="cakeBlob" clipPathUnits="objectBoundingBox">
+      <path d="
+        M 0.18,0
+        L 1,0
+        L 1,1
+        C 0.80,1 0.60,0.96 0.50,0.86
+        C 0.40,0.76 0.38,0.62 0.34,0.47
+        C 0.30,0.32 0.22,0.18 0.16,0.08
+        C 0.12,0.02 0.10,0 0.18,0
+        Z
+      "/>
+    </clipPath>
+  </defs>
+</svg>
+
+<!-- ── HEADER ── -->
+<header>
+  <img src="https://1196158183c914247688.cdn6.editmysite.com/uploads/b/1196158183c914247688d7a2d1a28ce4ff9fefb520fc01b12729b23d943ffb20/shanksArtboard%201%402x_1738680107.png?width=2400&optimize=medium"
+    alt="Shanks Bakery and Boba" class="logo">
+  <nav>
+    <a>HOME</a>
+    <a>MENU</a>
+    <a>CUSTOM CAKES</a>
+    <a>ABOUT</a>
+    <a>VISIT US</a>
+    <a class="nav-cta">🛒 ORDER ONLINE</a>
+  </nav>
+</header>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-blob">
+    <img src="cake_1.png" alt="Shanks custom cake" style="clip-path:url(#cakeBlob)">
+  </div>
+  <div class="hero-text">
+    <h1>Downtown<br>Chillicothe's</h1>
+    <span class="script">sweet spot</span>
+    <p>Handcrafted pastries, custom cakes,<br>and boba made with love.<br>Right here in our community.</p>
+    <div class="btns">
+      <a class="btn-filled">🛒 ORDER ONLINE</a>
+      <a class="btn-outline">VIEW MENU</a>
+    </div>
+  </div>
+</section>
+
+<!-- wave into community -->
+<div class="wave">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="#F0D8D0"/>
+  </svg>
+</div>
+
+<!-- ── COMMUNITY ── -->
+<section class="community">
+  <div class="community-text">
+    <h2>More than a bakery.<br>We're a <em>community</em>.</h2>
+    <p>From celebrations to everyday cravings, we're here to bring people together one sweet bite (or sip) at a time.</p>
+    <a class="btn-outline">OUR STORY</a>
+  </div>
+  <div class="community-photos">
+    <div class="photo-circle">
+      <img src="community_1.png" alt="Shanks storefront">
+    </div>
+    <div class="photo-stack">
+      <div class="photo-card">
+        <img src="community_2.png" alt="Shanks community">
+      </div>
+      <div class="photo-card">
+        <img src="community_3.png" alt="Shanks pastries">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- wave out of community -->
+<div class="wave">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,40 C240,0 480,80 720,40 C960,0 1200,80 1440,40 L1440,0 L0,0 Z" fill="#F0D8D0"/>
+  </svg>
+</div>
+
+<!-- ── MADE FRESH ── -->
+<section class="made-fresh">
+  <div class="made-fresh-inner">
+    <div class="drink-col">
+      <img src="drink.png" alt="Shanks boba drink">
+    </div>
+    <div class="fresh-content">
+      <h2>Made fresh. Made for you. ✨</h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-icon">🎂</div>
+          <h3>Custom Cakes</h3>
+          <p>Made for birthdays, weddings, and everything in between.</p>
+          <a class="learn-more">LEARN MORE</a>
+        </div>
+        <div class="menu-item">
+          <div class="menu-icon">🧋</div>
+          <h3>Boba Drinks</h3>
+          <p>Refreshing flavors made with quality ingredients.</p>
+          <a class="learn-more">VIEW DRINKS</a>
+        </div>
+        <div class="menu-item">
+          <div class="menu-icon">🧁</div>
+          <h3>Pastries</h3>
+          <p>Cupcakes, cookies, macarons, and more made fresh daily.</p>
+          <a class="learn-more">SEE PASTRIES</a>
+        </div>
+        <div class="menu-item">
+          <div class="menu-icon">⭐</div>
+          <h3>Seasonal Specials</h3>
+          <p>New flavors and treats throughout the year!</p>
+          <a class="learn-more">SEE WHAT'S NEW</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- wave into reviews -->
+<div class="wave">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 C360,80 720,0 1080,60 C1260,80 1380,20 1440,40 L1440,80 L0,80 Z" fill="#F0D8D0"/>
+  </svg>
+</div>
+
+<!-- ── REVIEWS + CTA ── -->
+<section class="bottom-section">
+  <div class="reviews">
+    <h3>Sweet words from<br>our community 🤍</h3>
+    <blockquote>"The best boba and desserts in town! The staff is always so welcoming and the treats are amazing."</blockquote>
+    <cite>– Ashley M.</cite>
+    <div class="review-dots">
+      <span class="active"></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <div class="bottom-photos">
+    <div class="bp">
+      <img src="community_3.png" alt="Shanks pastry">
+    </div>
+    <div class="bp">
+      <img src="community_1.png" alt="Shanks storefront">
+    </div>
+  </div>
+  <div class="cta-box">
+    <h3>Ready for<br>something sweet?</h3>
+    <p>Order online for pickup<br>or stop by and say hi!</p>
+    <a class="btn-dark">🛒 ORDER NOW</a>
+  </div>
+</section>
+
+<!-- wave into footer -->
+<div class="wave">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,40 C480,0 960,60 1440,20 L1440,0 L0,0 Z" fill="#F0D8D0"/>
+  </svg>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div>
+    <img src="https://1196158183c914247688.cdn6.editmysite.com/uploads/b/1196158183c914247688d7a2d1a28ce4ff9fefb520fc01b12729b23d943ffb20/shanksArtboard%201%402x_1738680107.png?width=2400&optimize=medium"
+      alt="Shanks Bakery and Boba" class="footer-logo">
+  </div>
+  <div>
+    <h4>Contact</h4>
+    <a>📞 (740) 851-CAKE</a>
+    <a>✉️ info@shanksbakerynandboba.com</a>
+    <a>📍 Downtown Chillicothe, OH</a>
+  </div>
+  <div>
+    <h4>Hours</h4>
+    <p>Mon – Thu: 8AM – 7PM</p>
+    <p>Fri – Sat: 8AM – 9PM</p>
+    <p>Sunday: 9AM – 5PM</p>
+  </div>
+  <div>
+    <h4>Follow Along</h4>
+    <div class="social-links">
+      <a>📸</a>
+      <a>👍</a>
+      <a>🎵</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
