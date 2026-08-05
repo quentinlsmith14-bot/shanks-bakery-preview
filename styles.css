@@ -717,16 +717,15 @@ a {
   }
 
   .cake-blob {
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%);
-  }
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%) rotate(-8deg);
+}
 
   .photo-collage {
     position: relative;
     width: 100%;
     max-width: 100%;
-    min-height: 430px;
     overflow: hidden;
     left: auto;
     right: auto;
@@ -736,18 +735,20 @@ a {
     width: 72vw;
     max-width: 290px;
     height: 250px;
-    left: -12vw;
     right: auto;
-    top: 40px;
+    transform: scale(0.9);
+    transform-origin: center;
   }
 
   .polaroid {
     width: 58vw;
     max-width: 230px;
     height: 310px;
-    left: 50%;
-    top: 45px;
+    left: 70%;
+    top: 20%;
     transform: translateX(-50%) rotate(7deg);
+    transform: scale(0.) rotate(7deg);
+    transform-origin: center;
   }
 
   .blob-two {
@@ -755,8 +756,10 @@ a {
     max-width: 270px;
     height: 270px;
     left: auto;
-    right: -14vw;
-    top: 125px;
+    right: vw;
+    top: 40%;
+    transform: scale(0.);
+    transform-origin: center;
   }
 
   .heart {
