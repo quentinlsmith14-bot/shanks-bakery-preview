@@ -745,7 +745,7 @@ a {
     max-width: 230px;
     height: 310px;
     left: 70%;
-    top: 20%;
+    top: 28%;
     transform: translateX(-50%) rotate(7deg);
     transform: scale(0.) rotate(7deg);
     transform-origin: center;
@@ -756,8 +756,7 @@ a {
     max-width: 270px;
     height: 270px;
     left: auto;
-    right: vw;
-    top: 40%;
+    top: 45%;
     transform: scale(0.);
     transform-origin: center;
   }
