@@ -202,9 +202,10 @@ a {
 
 .cake-blob {
   position: absolute;
-  right: 11%;
-  width: 90%;
-  height: 90%;
+  bottom: 5%;
+  right: 7%;
+  width: 100%;
+  height: 100%;
   background: var(--pink-2);
   border-radius: 55% 45% 62% 38% / 40% 55% 45% 60%;
   transform: rotate(-8deg);
@@ -299,28 +300,25 @@ a {
 }
 
 .blob-one {
-  left: 0;
-  top: 15px;
-  width: 310px;
-  height: 280px;
+  right: 550px;
+  width: 500px;
+  height: 440px;
   border-radius: 55% 45% 45% 55% / 45% 50% 50% 55%;
 }
 
 .polaroid {
-  left: 240px;
-  top: 70px;
-  width: 240px;
-  height: 310px;
+  left: 220px;
+  width: 340px;
+  height: 460px;
   border: 16px solid #fff;
   transform: rotate(7deg);
   z-index: 3;
 }
 
 .blob-two {
-  right: 0;
-  top: 60px;
-  width: 300px;
-  height: 300px;
+  left: 480px;
+  width: 500px;
+  height: 500px;
   border-radius: 40% 60% 55% 45% / 50% 40% 60% 50%;
 }
 
@@ -368,13 +366,14 @@ a {
   grid-template-columns: repeat(4, 1fr);
   gap: 28px;
   margin-left: min(27vw, 330px);
+  margin-inline: auto;
+  width: min(100% - 2rem, 1000px);
 }
 
 .favorite-card {
   text-align: center;
-  padding: 28px 20px;
-  border-right: 1px solid rgba(58,36,29,.16);
-  min-height: 210px;
+  padding: 0 2rem;
+  border-right: 1px solid rgba(58, 36, 29, 0.15);
 }
 
 .favorite-card:last-child {
