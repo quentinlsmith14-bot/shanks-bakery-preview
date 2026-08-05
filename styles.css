@@ -176,9 +176,12 @@ a {
   margin-top: 32px;
 }
 
+.button-row {
+  margin-top: 60px;
+}
+
 .btn {
   padding: 16px 28px;
-  margin-top: 32px;
   transition: .25s;
 }
 
