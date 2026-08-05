@@ -707,3 +707,12 @@ a {
 
   .button-row {
     gap: 12px;
+  }
+
+  .cake-blob {
+    width: 90%;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+}
