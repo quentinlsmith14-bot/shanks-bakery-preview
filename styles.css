@@ -775,8 +775,12 @@ a {
     left: 50%;
   }
 
+  .cake-main {
+    top: 20%;
+  }
+
   .cake-small.two {
-    left: 84%;
+    left: 110%;
     top: 70%;
   }
 
