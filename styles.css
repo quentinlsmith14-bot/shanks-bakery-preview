@@ -295,6 +295,21 @@ a {
   line-height: 1.75;
 }
 
+.icon { 
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 14px;
+  display: grid;
+  place-items: center;
+}
+
+.icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
 .photo-collage {
   position: relative;
   min-height: 430px;
